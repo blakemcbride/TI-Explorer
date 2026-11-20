@@ -1,0 +1,61 @@
+[2673] (M-0 MF-IMod-Low) Deposit-Byte (L=5 C=0) <A-2,M-58> IF ALWAYS 
+affect rotation
+
+[2674] (M-0 MF-VMA) Deposit-Byte (L=15 C=2) <A-2,M-57> IF ALWAYS 
+
+[2675] (M-0 MF-VMA) ADD <A-56,M-VMA> OBus-Normal IF ALWAYS 
+
+
+2676] (M-5) Deposit-Byte (L=2 C=3) <A-2,M-VMA> IF ALWAYS 
+[2677] (M-0 MF-VMA) Selective-Deposit (L=30 C=2) <A-2,M-VMA> IF ALWAYS 
+[2678] Call-XCT-Next 2682 <A-240,M-VMA> IF NOT-EQ 
+[2679] (M-57) CARRY-IN ALU-M <A-0,M-57> OBus-Normal IF ALWAYS 
+[2682] Call-XCT-Next 2745 <A-0,M-0> IF NUBUS-ERROR 
+[2683] (A-204) SETA <A-96,M-0> OBus-Normal IF ALWAYS 
+[2684] Call-XCT-Next 2729 <A-0,M-0> IF ALWAYS 
+[2685] (M-17) SETA <A-66,M-0> OBus-Normal IF ALWAYS 
+[2729] (M-0 MF-VMA-Start-Unmapped-Read) SETM <A-0,M-VMA> OBus-Normal IF ALWAYS 
+DEBUG: NUBUS-IO: OP 0 PA F5FFD018, Slot 5, Local Addr FFD018, Data 10
+[2730] (A-216) SETZ <A-0,M-0> OBus-Normal IF ALWAYS 
+[2731] RETURN 0 <A-0,M-0> IF NOT NUBUS-ERROR 
+DEBUG: NUbus Read Completed, returned 0xE0
+[2686] (A-240) SETM <A-0,M-VMA> OBus-Normal IF ALWAYS A-RETURN-XCT-NEXT 
+[2687] (M-39) SETM <A-0,M-MD> OBus-Normal IF ALWAYS 
+[2680] (M-0 MF-IMod-Low) Deposit-Byte (L=5 C=0) <A-2,M-5> IF ALWAYS A-RETURN-XCT-NEXT 
+[2681] (M-0 MF-MD) RIGHT Load-Byte (L=8 C=0) <A-2,M-39> IF ALWAYS 
+[2808] Jump-XCT-Next 2800 <A-0,M-0> IF ALWAYS 
+[2809] (M-57) ADD <A-57,M-MD> OBus-Normal IF ALWAYS 
+[2800] CALL 2672 <A-0,M-0> IF ALWAYS 
+[2672] CALL 2688 <A-194,M-57> IF NOT NOT-EQ 
+[2673] (M-0 MF-IMod-Low) Deposit-Byte (L=5 C=0) <A-2,M-58> IF ALWAYS 
+[2674] (M-0 MF-VMA) Deposit-Byte (L=15 C=2) <A-2,M-57> IF ALWAYS 
+[2675] (M-0 MF-VMA) ADD <A-56,M-VMA> OBus-Normal IF ALWAYS 
+[2676] (M-5) Deposit-Byte (L=2 C=3) <A-2,M-VMA> IF ALWAYS 
+[2677] (M-0 MF-VMA) Selective-Deposit (L=30 C=2) <A-2,M-VMA> IF ALWAYS 
+[2678] Call-XCT-Next 2682 <A-240,M-VMA> IF NOT-EQ 
+[2679] (M-57) CARRY-IN ALU-M <A-0,M-57> OBus-Normal IF ALWAYS 
+[2682] Call-XCT-Next 2745 <A-0,M-0> IF NUBUS-ERROR 
+[2683] (A-204) SETA <A-96,M-0> OBus-Normal IF ALWAYS 
+[2684] Call-XCT-Next 2729 <A-0,M-0> IF ALWAYS 
+[2685] (M-17) SETA <A-66,M-0> OBus-Normal IF ALWAYS 
+[2729] (M-0 MF-VMA-Start-Unmapped-Read) SETM <A-0,M-VMA> OBus-Normal IF ALWAYS 
+DEBUG: NUBUS-IO: OP 0 PA F5FFD39C, Slot 5, Local Addr FFD39C, Data E0
+[2730] (A-216) SETZ <A-0,M-0> OBus-Normal IF ALWAYS 
+[2731] RETURN 0 <A-0,M-0> IF NOT NUBUS-ERROR 
+DEBUG: NUbus Read Completed, returned 0xFF
+[2686] (A-240) SETM <A-0,M-VMA> OBus-Normal IF ALWAYS A-RETURN-XCT-NEXT 
+[2687] (M-39) SETM <A-0,M-MD> OBus-Normal IF ALWAYS 
+[2680] (M-0 MF-IMod-Low) Deposit-Byte (L=5 C=0) <A-2,M-5> IF ALWAYS A-RETURN-XCT-NEXT 
+[2681] (M-0 MF-MD) RIGHT Load-Byte (L=8 C=0) <A-2,M-39> IF ALWAYS 
+[2801] JUMP 2804 <A-108,M-MD> IF NOT-EQ 
+[2802] Call-XCT-Next 2858 <A-0,M-0> IF ALWAYS 
+[2803] (A-150) SETA <A-164,M-0> OBus-Normal IF ALWAYS 
+[2858] (M-1) Deposit-Byte (L=6 C=0) <A-2,M-3> IF ALWAYS 
+
+[2859] (M-1) XOR <A-150,M-1> OBus-Normal IF ALWAYS 
+[2860] (M-1) Load-Byte (L=6 C=0) <A-2,M-1> IF ALWAYS 
+[2861] (M-0 MF-MCR) Selective-Deposit (L=25 C=7) <A-1,M-MCR> IF ALWAYS 
+**MInst-HALT**
+[2862] JUMP 2862 <A-0,M-0> IF ALWAYS 
+[CPU] MASTER CLOCK STOPPED
+[2862] JUMP 2862 <A-0,M-0> IF ALWAYS 

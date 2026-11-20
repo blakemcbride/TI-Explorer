@@ -1,0 +1,13 @@
+# build products
+*.o
+/meroko
+/tools/epart
+
+# unpacked, writable disk images (the .xz files are the pristine originals)
+/disks/*.dsk
+
+# files the emulator writes at run time
+/NVRAM.BIN
+/DEBUG.LOG
+/*.DUMP
+/SCREENSHOT.BMP
